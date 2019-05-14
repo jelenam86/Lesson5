@@ -11,12 +11,22 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
 public class SeaCreature {
-	
+
 	public static void main(String[] args) {
-		SeaCreature spong = new SeaCreature("squidward");
+		SeaCreature sponge = new SeaCreature("Spongebob");
+		sponge.eat();
+		sponge.laugh();
+
+		SeaCreature patrick = new SeaCreature("Patrick");
+		System.out.println(patrick.getName());
+		patrick.eat();
+		patrick.laugh();
+
+		SeaCreature spong = new SeaCreature("Squidward");
+		System.out.println(spong.getName());
+		spong.eat();
 		spong.laugh();
 	}
-
 
 	private String name;
 
@@ -34,8 +44,8 @@ public class SeaCreature {
 
 	public void laugh() {
 		try {
-			AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(
-					"sounds/" + this.name + ".wav").toURI().toURL());
+			AudioInputStream audioInputStream = AudioSystem
+					.getAudioInputStream(new File("sounds/" + this.name + ".wav").toURI().toURL());
 			Clip clip = AudioSystem.getClip();
 			clip.open(audioInputStream);
 			clip.start();
