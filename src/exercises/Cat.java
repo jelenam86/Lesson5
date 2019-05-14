@@ -39,8 +39,18 @@ public class Cat {
 
 		// 3. Kill the Cat!
 
+		Cat cat = new Cat("Sylvester");
+
+		cat.meow();
+		cat.printName();
+
+		for (int i = cat.lives; i > 0; i--) {
+			cat.kill();
+		}
+
+		/*
+		 * cat.lives = 1; cat.kill();
+		 */
+
 	}
 }
-
-
-
