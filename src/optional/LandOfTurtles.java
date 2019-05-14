@@ -28,21 +28,23 @@ public class LandOfTurtles {
 
 		// 7. Put 50 Turtles on the beach
 
+		final int frameWidth = 600;
+		final int frameHeight = 400;
+		
 		JFrame frame = new JFrame("Land of Turtles");
 		frame.setVisible(true);
 		frame.getContentPane().add(panel);
 		panel.setBackgroundImage(galapagosIslands);
-		frame.setSize(600, 400);
+		frame.setSize(frameWidth, frameHeight);
 		Turtle turtle = new Turtle();
 		panel.addTurtle(turtle);
 
 		Turtle[] turtles = new Turtle[50];
-		for (int i = 0; i < 50; i++) {
-			turtles[i] = new Turtle();
-		}
+
 		for (int i = 0; i < turtles.length; i++) {
-			turtles[i].setX(new Random().nextInt(300) + 300);
-			turtles[i].setY(new Random().nextInt(250) + 150);
+			turtles[i] = new Turtle();
+			turtles[i].setX(new Random().nextInt(frame.getWidth()/2) + frame.getWidth()/2);
+			turtles[i].setY(new Random().nextInt(frame.getHeight()*2/3) + frame.getHeight()/3);
 			panel.addTurtle(turtles[i]);
 		}
 	}
