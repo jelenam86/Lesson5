@@ -61,6 +61,16 @@ public class Popcorn {
 		}
 	}
 	
+	
+	public static void main(String[] args) {
+		
+		Microwave mikrowelle = new Microwave();
+		Popcorn pop = new Popcorn("cheese");
+		
+		mikrowelle.putInMicrowave(pop);
+		mikrowelle.setTime(2);
+		mikrowelle.startMicrowave();
+	}
 }
 
 
