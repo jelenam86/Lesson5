@@ -16,26 +16,37 @@ public class Smurf {
 	}
 
 	public String getName() {
-		return "My name is " + name + " Smurf.";
+		if (this.name.equals("Smurfette"))
+			return "My name is " + name + ".";
+		else
+			return "My name is " + name + " Smurf.";
 	}
 
 	public void eat() {
-		System.out.println(name + " Smurf is eating Smurfberries.");
+		if (this.name.equals("Smurfette"))
+			System.out.println(name + " is eating Smurfberries.");
+		else
+			System.out.println(name + " Smurf is eating Smurfberries.");
 	}
 
 	/* Papa Smurf wears a red hat, all the others are white. */
 	public String getHatColor() {
 		// 3. Fill in this method
-		return "";
+		if (this.name.equals("Papa"))
+			return this.name + " Smurf wears a red hat.";
+		else if (this.name.equals("Smurfette"))
+			return this.name + " wears a white hat.";
+		else
+			return this.name + " Smurf wears a white hat.";
 	}
 
 	/* Smurfette is the only female Smurf. */
 	public String isGirlOrBoy() {
 		// 4. Fill in this method
-		return "";
+		if (this.name.equals("Smurfette"))
+			return this.name + " is a female Smurf.";
+		else
+			return this.name + " Smurf is a male Smurf.";
 	}
 
 }
-
-
-
